@@ -172,4 +172,4 @@ val fastProgress = fastProgressFlow()
 fun fastProgressFlow(): Flow<Int> = flow<Int> { repeat(10) { emit(it) } }
 ```
 
-See [implementation](https://github.com/savvasenok/kotlin-coroutines-recipes/blob/master/src/commonMain/kotlin/enqueueWithDelay.kt).
+See [implementation](https://github.com/MarcinMoskala/kotlin-coroutines-recipes/blob/master/src/commonMain/kotlin/enqueueWithDelay.kt).
