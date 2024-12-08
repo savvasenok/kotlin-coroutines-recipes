@@ -3,7 +3,6 @@ package recipes
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.datetime.Clock
-import kotlin.math.max
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 
@@ -19,7 +18,7 @@ fun <T> Flow<T>.enqueueWithDelay(period: Duration = 1.seconds): Flow<T> {
             val currentTime = currentTimeMillis()
             val elapsedTime = currentTime - lastEmitTime
 
-            val waitTime = max(periodMs - elapsedTime, 0)
+            val waitTime = periodMs - elapsedTime
             if (waitTime > 0) delay(waitTime)
 
             emit(value)
